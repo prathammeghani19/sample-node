@@ -1,12 +1,6 @@
-```javascript
-const fs = require("fs").promises;
+const fs = require("fs");
 
-(async () => {
-  try {
-    const data = await fs.readFile("test.txt", "utf-8");
-    console.log(data);
-  } catch (err) {
-    throw err;
-  }
-})();
-```
+fs.readFile("test.txt", "utf-8", function (err, data) {
+  if (err) throw err;
+  console.log(data);
+});
